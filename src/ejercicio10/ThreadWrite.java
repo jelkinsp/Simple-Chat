@@ -4,6 +4,10 @@ import java.io.*;
 import java.net.Socket;
 import java.util.Scanner;
 
+/**
+ *
+ * Hilo Escritura.s
+ */
 public class ThreadWrite extends Thread {
     Socket socket;
 

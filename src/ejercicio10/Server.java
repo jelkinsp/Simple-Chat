@@ -4,18 +4,25 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
+/**
+ * Servidor
+ *
+ */
 public class Server {
     Socket client;
     ServerSocket server;
 
     public static void main(String[] args) {
-
         Server server = new Server();
         server.setConnection();
         server.startThreads();
-        server.closeStreamSockets();
+        server.closeSockets();
     }
 
+    /**
+     * Establece la conexion
+     *
+     */
     private void setConnection() {
         try {
             server = new ServerSocket(8000);
@@ -27,6 +34,10 @@ public class Server {
         }
     }
 
+    /**
+     * Inicializa los hilos
+     *
+     */
     private void startThreads(){
         ThreadRead read = new ThreadRead(client);
         ThreadWrite write = new ThreadWrite(client);
@@ -42,7 +53,10 @@ public class Server {
 
     }
 
-    private void closeStreamSockets() {
+    /**
+     * Cerrar hilos
+     */
+    private void closeSockets() {
         try{
             client.close();
             server.close();

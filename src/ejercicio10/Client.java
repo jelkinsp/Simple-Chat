@@ -14,9 +14,13 @@ public class Client {
         Client client = new Client();
         client.setConnection();
         client.startThreads();
-        client.closeStreamsSockets();
+        client.closeSockets();
     }
 
+    /**
+     * Establece la conexion
+     *
+     */
     private void setConnection() {
         try {
             client = new Socket("localhost", 8000);
@@ -44,7 +48,11 @@ public class Client {
         }
 
     }
-    private void closeStreamsSockets() {
+
+    /**
+     * Cerrar hilos
+     */
+    private void closeSockets() {
         try{
             client.close();
         }catch (IOException e){

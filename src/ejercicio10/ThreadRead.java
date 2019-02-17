@@ -4,8 +4,13 @@ import java.io.DataInputStream;
 import java.io.IOException;
 import java.net.Socket;
 
+/**
+ * Hilo lectura.
+ *
+ */
 public class ThreadRead extends Thread{
     Socket socket;
+
     public ThreadRead(Socket socket) {
         this.socket = socket;
     }
