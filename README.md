@@ -2,9 +2,13 @@
 
  Chat simple hecho en java con Socket.
  
- Version = 0.0.0
+ ---
+ 
+##### Version
+ 
+ **0.0.0**
 
-## Change Log
+### Change Log
  
  **V0.0.0**
  
